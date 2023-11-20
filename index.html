@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pablo Pimenta Quadros</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+  <link rel="stylesheet" href="fonts/font.css" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <h1>Pablo Pimenta Quadros</h1>
+      <div class="lang" data-active="pt">
+        <span data-index="pt">
+          <label class="desktop">Português Brasileiro</label>
+          <img src="./br.png" alt="Português Brasileiro" />
+        </span>
+        <span data-index="en">
+          <label class="desktop">English</label>
+          <img src="./en.svg" alt="English" />
+        </span>
+        <div class="bg"></div>
+      </div>
+    </header>
+    <section class="main">
+      <div class="left">
+        <div class="soon">
+          <div class="bubble bubble-left"></div>
+          <h1>Em breve!</h1>
+          <div class="bubble bubble-right"></div>
+        </div>
+      </div>
+      <div class="right">
+        <h3>Enquanto isso, veja mais dos meus trabalhos em outros cantos!</h3>
+        <a href="#">Clique aqui!</a>
+      </div>
+    </section>
+  </div>
+  <script type="text/javascript">
+    window.addEventListener('load', () => {
+      const langs = {
+        pt: {
+          soon: 'Em breve!',
+          text: 'Enquanto isso, veja mais dos meus trabalhos em outros cantos!',
+          button: 'Clique aqui!',
+        },
+        en: {
+          soon: 'Soon!',
+          text: 'In the meantime, check out more of my work elsewhere!',
+          button: 'Click here!',
+        }
+      };
+
+      const onClickLang = (el) => {        
+        const lang = langs[el.dataset.index];
+
+        document.querySelector('.lang').dataset.active = el.dataset.index;
+        document.querySelector('.soon h1').innerHTML = lang.soon;
+        document.querySelector('.right h3').innerHTML = lang.text;
+        document.querySelector('.right a').innerHTML = lang.button;
+      };
+
+      document.querySelectorAll('.lang > span').forEach(it => it.addEventListener('click', onClickLang.bind(null, it), false));
+    }, false);
+  </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+@font-face {
+  font-family: 'A-OTF Shin Go Pro';
+  font-style: normal;
+  font-weight: 300;
+  src: url('./AOTFShinGoProLight.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'A-OTF Shin Go Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./AOTFShinGoProRegular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'A-OTF Shin Go Pro';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./AOTFShinGoProBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'A-OTF Shin Go Pro';
+  font-style: normal;
+  font-weight: 800;
+  src: url('./AOTFShinGoProHeavy.woff') format('woff');
+}

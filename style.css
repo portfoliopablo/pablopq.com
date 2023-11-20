@@ -1,0 +1,290 @@
+html, body {
+  height: 100%;
+  padding: 0;
+}
+
+body {
+  background-color: #000000;
+  font-family: 'A-OTF Shin Go Pro';
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 80%;
+  padding: 35px 0;
+}
+
+header {
+  display: inline-block;
+  width: 100%;
+}
+
+header h1 {
+  display: inline-block;
+  margin: 0;
+  color: #FFFFFF;
+  font-weight: 400;
+  font-size: 24px;
+  margin-top: 5px;
+}
+
+header .lang {
+  float: right;
+  background-color: #161616;
+  font-weight: 300;
+  border-radius: 25px;
+  position: relative;
+  height: 39px;
+}
+
+header .lang > span {
+  display: inline-block;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 25px;
+  position: relative;
+  color: #fff;
+  z-index: 2;
+  cursor: pointer;
+}
+
+header .lang > span label.mobile {
+  display: none;
+}
+
+header .lang > span img {
+  margin-left: 5px;
+  margin-top: 3px;
+  vertical-align: top;
+}
+
+header .lang .bg {
+  position: absolute;
+  height: 100%;
+  background-color: #fff;
+  top: 0;
+  z-index: 1;
+  border-radius: 25px;
+  transition: .25s;
+}
+
+header .lang[data-active="pt"] > span:first-child,
+header .lang[data-active="en"] > span:not(:first-child) {
+  color: #000;
+}
+
+header .lang[data-active="pt"] .bg {
+  width: 226px;
+  left: 0;
+}
+
+header .lang[data-active="en"] .bg {
+  width: 147px;
+  left: 231px;
+}
+
+header .lang > span[data-index="en"] {
+  padding: 10px 25px;
+}
+
+section.main {
+  display: flex;
+  width: 100%;
+  height: calc(100vh - 148px);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+section.main .left {
+  width: 60%;
+  justify-content: center;
+  display: flex;
+}
+
+section.main .soon {
+  position: relative;
+  width: fit-content;
+}
+
+section.main .soon .bubble {
+  width: 150px;
+  height: 150px;
+  background-color: #fff;
+  border-radius: 100px;
+  transition: 1s;
+  position: absolute;
+}
+
+section.main .soon .bubble-left {
+  background: linear-gradient(0deg, rgba(0, 0, 0, .7) 39%, rgba(47, 45, 45, .7) 100%);
+  top: 40px;
+  z-index: 1;
+}
+
+section.main .soon .bubble-right {
+  background: linear-gradient(180deg, rgba(0, 0, 0, .7) 39%, rgba(47, 45, 45, .7) 100%);
+  right: 0;
+  top: -80px;
+  z-index: 3;
+}
+
+section.main .soon .bubble:hover {
+  transform: rotate(180deg) scale(.8);
+}
+
+section.main .soon h1 {
+  margin: 0 70px 0 70px;
+  font-size: 6rem;
+  color: #fff;
+  font-weight: 800;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+section.main .right {
+  width: 40%;
+}
+
+section.main .right h3 {
+  width: 40%;
+  font-size: 36px;
+  font-weight: 300;
+  margin: 0;
+  color: #fff;
+  display: inline-block;
+  width: 100%;
+  line-height: 54px;
+}
+
+section.main .right a {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  border: solid 1px #D9D9D9;
+  font-size: 54px;
+  font-weight: 700;
+  padding: 10px 15px;
+  border-radius: 10px;
+  margin-top: 30px;
+}
+
+section.main .right a:hover {
+  color: #000;
+  background-color: #D9D9D9;
+}
+
+@media screen and (max-width: 1510px) {
+  section.main .soon h1 {
+    font-size: 5rem;
+  }
+}
+
+@media screen and (max-width: 1310px) {
+  section.main .soon h1 {
+    font-size: 4rem;
+  }
+  section.main .right a {
+    font-size: 44px;
+  }
+}
+
+@media screen and (max-width: 1110px) {
+  section.main .soon h1 {
+    font-size: 3rem;
+  }
+  section.main .right a {
+    font-size: 44px;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  section.main .right a {
+    font-size: 34px;
+  }
+  section.main .right h3 {
+    font-size: 26px;
+  }
+}
+
+@media screen and (max-width: 890px) {
+  header .lang > span label.desktop {
+    display: none;
+  }
+
+  header .lang > span label.mobile {
+    display: inline-block;
+  }
+
+  header .lang > span[data-index="pt"] img {
+    margin-left: 0;
+  }
+
+  header .lang[data-active="pt"] .bg {
+    width: 47px;
+    left: 0;
+  }
+  
+  header .lang > span[data-index="en"] {
+    padding: 0 11px;
+  }
+
+  header .lang[data-active="en"] .bg {
+    width: 53px;
+    left: 52px;
+  }
+
+  section.main {
+    height: auto;
+    align-items: normal;
+    justify-content: center;
+  }
+
+  section.main .left {
+    width: fit-content;
+    height: 200px;
+    margin-top: 200px;
+  }
+
+  section.main .soon h1 {
+    font-size: 4rem;
+  }
+
+  section.main .right {
+    width: 100%;
+    margin-top: 70px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 510px) {
+  .wrapper {
+    width: 90%;
+  }
+
+  header h1 {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+
+  section.main .left {
+    margin-top: 100px;
+  }
+
+  section.main .soon h1 {
+    text-align: center;
+  }
+
+  section.main .soon .bubble {
+    width: 100px;
+    height: 100px;
+  }
+
+  section.main .soon .bubble-left {
+    top: 80px;
+  }
+  
+  section.main .soon .bubble-right {
+    top: 0px;
+  }
+}
